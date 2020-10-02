@@ -73,12 +73,12 @@ namespace TjuvPolisGame
                                         }
                                     }
                                 }
+                                if (CheckIfPolice(x, y, policeList) == false)
+                                {
+                                    isRobbery = true;
+                                }
                             }
 
-                            if (CheckIfPolice(x, y, policeList) == false)
-                            {
-                                isRobbery = true;
-                            }
 
                             if (CheckIfPolice(x, y, policeList)) // Om alla tre kommer på samma ställe sker först rånet och sedan tar polisen genast tjuven
                             {
