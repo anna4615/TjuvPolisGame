@@ -67,7 +67,7 @@ namespace TjuvPolisGame
                                             if (citizen.XPosition == x && citizen.YPosition == y)
                                             {
                                                 PerformTheft(citizen, thief);
-                                                robberies++;
+                                                robberies++; // Räknas som roobery även om M inte har ngt att stjäla
                                                 robberyEvent = true;
                                             }
                                         }
@@ -90,7 +90,7 @@ namespace TjuvPolisGame
                                         {
                                             if (police.XPosition == x && police.YPosition == y)
                                             {
-                                                if (CheckSwag(thief))
+                                                if (CheckSwag(thief))  //Polisen tar brara tjuven om hen har stöldgods på sig
                                                 {
                                                     ConfiscateSwag(thief, police);
                                                     SendToPrison(thief, prison);
@@ -411,7 +411,6 @@ namespace TjuvPolisGame
         // Försökte lägga CreateList-metoderna och CreateDirection i klasserna men fick inte till det
         private static void CreateCitizenList(int noOfCitizens, int width, int height, List<Citizen> citizens)
         {
-
             for (int i = 0; i < noOfCitizens; i++)
             {
                 int xPos = r.Next(0, width);
@@ -459,8 +458,8 @@ namespace TjuvPolisGame
                 };
                 bool isInPrison = false;
                 DateTime timeOfCapture = new DateTime();
-                double timeInPrison = 0;
-                thiefs.Add(new Thief(idNumber, xPos, yPos, xDir, yDir, swag, isInPrison, timeOfCapture, timeInPrison/*, timeOfRelease*/));
+                //double timeInPrison = 0;
+                thiefs.Add(new Thief(idNumber, xPos, yPos, xDir, yDir, swag, isInPrison, timeOfCapture/*, timeInPrison*/));
             }
         }
 

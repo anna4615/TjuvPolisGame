@@ -95,12 +95,5 @@ namespace TjuvPolisGame
             }
             return s;
         }
-        public static void StartTimer()
-        {
-            System.Timers.Timer timer = new System.Timers.Timer();
-
-            Console.WriteLine($"Starttid: {DateTime.Now}");
-
-        }
     }
 }
